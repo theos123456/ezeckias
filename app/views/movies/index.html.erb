@@ -1,0 +1,76 @@
+<p id="notice"><%= notice %></p>
+ <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Ubuntu|ZCOOL+QingKe+HuangYou" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Ubuntu|ZCOOL+QingKe+HuangYou" rel="stylesheet">
+<style>
+img{width:150px;height:200px;}
+tr{color:#3f6d42;}
+td{color:#a9e8ad;}
+body{background-color:#060f18;}
+ul{padding:10px;text-decoration:none;list-style-type:none;position:relative;margin-top:10px;}
+li{padding:10px;text-decoration:none;list-style-type:none;position:relative;margin-top:10px;display:inline;}
+.title{color:green;font-size:35px;font-weight:bold;font-family: 'ZCOOL QingKe HuangYou', cursive;position:relative;margin-top:50px;}
+a{color: #fff;font-size:15px;font-family: 'Josefin Sans', sans-serif;}
+a:hover{color: #fff;color:#155555;background-color:transparent;border-radius: 5px;}
+.container {padding:auto;margin:auto;text-align:center;}
+.search{border-radius:8px;background-color:transparent;text-color}
+input[type=text] { width: 130px;-webkit-transition: width 0.4s ease-in-out;transition: width 0.4s ease-in-out;}
+input[type=text]:focus {width: 50%;}
+input{color:white;border:1px solid #155555;}
+input:hover{border-radius:8px;}
+.titl{color:#155515;font-size:28px;font-weight:bold;font-family: 'ZCOOL QingKe HuangYou', cursive;}
+p{color:#218621;font-size:18;font-weight:bold;font-family: 'Ubuntu', sans-serif;}
+.crud{color:blue;}
+.newmv{align:center;}
+.footer{text-align:center;}
+</style>
+</head> 
+<header>
+<p class="titl">Jorah Movies Store</p>
+<nav>
+  <div class="nav">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About us</a></li>
+      <li><a href="#">Contact us</a> </li>
+    </ul>
+    <div class="newmv">
+    <%= link_to 'New Movie', new_movie_path %>
+    </div>
+    <form >
+      <input class="search" type="text" name="search" placeholder="Search..">
+    </form>
+  </div>
+</nav>
+
+</header>
+<br>
+<div class="index">
+    <div class="container-fluid">
+
+      <% @movies.each do |movie| %>
+<div class="row" >
+        <div class="col-md-4" style="position:relatives;left:50px;">
+          <div class="card mb-3 shadow-sm">
+            <img src="<%= movie.attachment %>"/>
+            <div class="card-body">
+              <p class="card-text">Title:<%= movie.title %><br>Category:<%= movie.category %><br>Release year<%= movie.year %><br>Price<%= movie.price %><br>
+ <div class="crud">         
+<%= link_to 'Edit', edit_movie_path(movie) %>
+<%= link_to 'Show', movie %>
+<%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+</p>
+      <div class="d-flex justify-content-between align-items-center">  
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <br>
+<footer>
+<p class="footer"> ©2019 Kubwayo Ezechias</p>
+  <p class="footer">Contact information: <a href="dirtyhuh@gmail.com">
+ dirtyhuh@gmail.com </a>.</p>
+</footer>
+         
