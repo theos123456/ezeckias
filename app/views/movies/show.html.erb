@@ -1,31 +1,35 @@
 <style>
-img{width:150px;height:200px;}
+img{width:350px;height:400px;}
 strong{color:#3f6d42;}
+.p{position:relative;float:left;padding:25px;margin-top:600;}
+div{margin-top:25 0px;}
 </style>
-<p id="notice"><%= notice %></p>
-<p>
+<p id="notice"><% notice %>
+<p class="p">
   <img src="<%= @movie.attachment %>"/>
 </p>
-<p>
+<p class="p1">
   <strong>Title:</strong>
-  <%= @movie.title %>
-</p>
+  <%= @movie.title %><br>
+</p><br>
 
-<p>
+<p class="p2">
   <strong>Category:</strong>
   <%= @movie.category %>
-</p>
+</p><br>
 
-<p>
+<p class="p3">
   <strong>Year:</strong>
   <%= @movie.year %>
-</p>
+</p class="p4"><br>
 
-<p>
+<p class="p5">
   <strong>Price:</strong>
   <%= @movie.price %>
-</p>
+</p><br>
+<div>
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
+</div>
 </body>
 
